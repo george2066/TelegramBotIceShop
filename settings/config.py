@@ -1,5 +1,6 @@
 import os
-from pydantic import SecretStr
+
+from pydantic import SecretStr, PostgresDsn, Secret
 from pydantic_settings import SettingsConfigDict, BaseSettings
 
 
@@ -8,3 +9,6 @@ class AppSettings(BaseSettings):
 
     TELEGRAM_API_KEY: SecretStr = SecretStr('secret')
     LOG_LEVEL: str = "INFO"
+    POSTGRES_DSN: Secret[PostgresDsn] = Secret(
+        PostgresDsn('postgresql://postgres:postgres@localhost:5432/postgres')
+    )
