@@ -10,5 +10,5 @@ class AppSettings(BaseSettings):
     TELEGRAM_API_KEY: SecretStr = SecretStr('secret')
     LOG_LEVEL: str = "INFO"
     POSTGRES_DSN: Secret[PostgresDsn] = Secret(
-        PostgresDsn('postgresql://postgres:postgres@localhost:5432/postgres')
+        PostgresDsn('postgresql+asyncpg://postgres:postgres@localhost:5432/postgres')
     )

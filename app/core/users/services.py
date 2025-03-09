@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from core.users.repositories import UserRepository
+from app.core.users.repositories import UserRepository
 
 
 @dataclass
